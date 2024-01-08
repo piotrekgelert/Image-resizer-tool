@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>wgt_image_resizer</class>
- <widget class="QWidget" name="wgt_image_resizer">
+ <class>mw_resize_image</class>
+ <widget class="QMainWindow" name="mw_resize_image">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>677</width>
-    <height>522</height>
+    <width>615</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="font">
@@ -17,393 +17,631 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Image_resizer</string>
+   <string>Resize Image</string>
   </property>
-  <widget class="QGroupBox" name="gb_size_info">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>231</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Size info in pixels</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="flat">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="">
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="gb_size_info">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>209</width>
-      <height>25</height>
+      <x>210</x>
+      <y>210</y>
+      <width>231</width>
+      <height>91</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="hl_current_size">
-     <item>
-      <widget class="QLabel" name="lb_current_size">
-       <property name="text">
-        <string>Current size:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_current_width">
-       <property name="text">
-        <string>width</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_x1">
-       <property name="text">
-        <string>x</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_current_height">
-       <property name="text">
-        <string>height</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>184</width>
-      <height>25</height>
-     </rect>
+    <property name="title">
+     <string>Size info in pixels</string>
     </property>
-    <layout class="QHBoxLayout" name="hl_new_size">
-     <item>
-      <widget class="QLabel" name="lb_new_size">
-       <property name="text">
-        <string>New size:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_new_width">
-       <property name="text">
-        <string>width</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_x3">
-       <property name="text">
-        <string>x</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_new_height">
-       <property name="text">
-        <string>height</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QGroupBox" name="gb_new_image_size_in_pixels">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>220</y>
-     <width>181</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Set size in pixels</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="flat">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
-    <layout class="QHBoxLayout" name="hl_height_pixels">
-     <item>
-      <widget class="QLabel" name="lb_height_pixels">
-       <property name="text">
-        <string>Height:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="le_height_pixels"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_height_px">
-       <property name="text">
-        <string>px</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
+    <property name="flat">
+     <bool>true</bool>
     </property>
-    <layout class="QHBoxLayout" name="hl_width_pixels">
-     <item>
-      <widget class="QLabel" name="lb_width_pixels">
-       <property name="text">
-        <string>Width:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="le_width_pixels"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_width_px">
-       <property name="text">
-        <string>px</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>209</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hl_current_size">
+      <item>
+       <widget class="QLabel" name="lb_current_size">
+        <property name="text">
+         <string>Current size:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_current_width">
+        <property name="text">
+         <string>width</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_x1">
+        <property name="text">
+         <string>x</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_current_height">
+        <property name="text">
+         <string>height</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>184</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hl_new_size">
+      <item>
+       <widget class="QLabel" name="lb_new_size">
+        <property name="text">
+         <string>New size:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_new_width">
+        <property name="text">
+         <string>width</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_x3">
+        <property name="text">
+         <string>x</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_new_height">
+        <property name="text">
+         <string>height</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-  </widget>
-  <widget class="QGroupBox" name="gb_new_image_size_in_percent">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>220</y>
-     <width>151</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Set size in pecent</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="flat">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QLabel" name="lb_message">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="hl_width_percent">
-     <item>
-      <widget class="QLabel" name="lb_width_percent">
-       <property name="text">
-        <string>Width:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="le_width_percent"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_width_perc">
-       <property name="text">
-        <string>%</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="hl_height_percent">
-     <item>
-      <widget class="QLabel" name="lb_height_percent">
-       <property name="text">
-        <string>Height:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="le_height_percent"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="lb_height_perc">
-       <property name="text">
-        <string>%</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QGroupBox" name="gb_aspect_ratio">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>410</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Aspect ratio</string>
-   </property>
-  </widget>
-  <widget class="QGroupBox" name="gb_image_paths">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>641</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="title">
-    <string>Image paths</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="flat">
-    <bool>true</bool>
-   </property>
-   <widget class="QLabel" name="lb_image_path">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
+      <x>40</x>
+      <y>690</y>
       <width>621</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Message</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lb_folder_path">
+   <widget class="QGroupBox" name="gb_image_paths">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>621</width>
-      <height>21</height>
+      <x>20</x>
+      <y>20</y>
+      <width>561</width>
+      <height>181</height>
      </rect>
     </property>
-    <property name="text">
-     <string>TextLabel</string>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
+    <property name="title">
+     <string>Image paths</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <widget class="QLabel" name="lb_image_path">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>621</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lb_folder_path">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>621</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>346</width>
+       <height>33</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hl_folder_path">
+      <item>
+       <widget class="QLabel" name="lb_save_image_path">
+        <property name="text">
+         <string>Select folder to save the image:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pb_folder_path">
+        <property name="text">
+         <string>Select folder</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>267</width>
+       <height>33</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hl_image_path">
+      <item>
+       <widget class="QLabel" name="lb_get_image_path">
+        <property name="text">
+         <string>Select path to image: </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pb_image_path">
+        <property name="text">
+         <string>Select image</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QTabWidget" name="tw_set_size_tabs">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>346</width>
-      <height>33</height>
+      <x>20</x>
+      <y>310</y>
+      <width>560</width>
+      <height>300</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="hl_folder_path">
-     <item>
-      <widget class="QLabel" name="lb_save_image_path">
-       <property name="text">
-        <string>Select folder to save the image:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pb_folder_path">
-       <property name="text">
-        <string>Select folder</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>267</width>
-      <height>33</height>
-     </rect>
+    <property name="currentIndex">
+     <number>0</number>
     </property>
-    <layout class="QHBoxLayout" name="hl_image_path">
-     <item>
-      <widget class="QLabel" name="lb_get_image_path">
+    <widget class="QWidget" name="tab_pixels">
+     <attribute name="title">
+      <string>Set size in pixels</string>
+     </attribute>
+     <widget class="QGroupBox" name="gb_new_image_size_in_pixels">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>441</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Set size in pixels</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>163</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hl_height_pixels">
+        <item>
+         <widget class="QLabel" name="lb_height_pixels">
+          <property name="text">
+           <string>Height:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_height_pixels"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lb_height_px">
+          <property name="text">
+           <string>px</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hl_width_pixels">
+        <item>
+         <widget class="QLabel" name="lb_width_pixels">
+          <property name="text">
+           <string>Width:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_width_pixels"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lb_width_px">
+          <property name="text">
+           <string>px</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>271</width>
+         <height>20</height>
+        </rect>
+       </property>
        <property name="text">
-        <string>Select path to image: </string>
+        <string>keep aspect ratio (proportional)</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pb_image_path">
-       <property name="text">
-        <string>Select image</string>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>180</y>
+        <width>158</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="hl_resize_buttons_in_pixels">
+       <item>
+        <widget class="QPushButton" name="pb_resize_pixels">
+         <property name="text">
+          <string>Resize</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_cancel_pixels">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="lb_pixel_message">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>531</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Message</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_percent">
+     <attribute name="title">
+      <string>Set size in percent</string>
+     </attribute>
+     <widget class="QGroupBox" name="gb_new_image_size_in_percent">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>441</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Set size in pecent</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="layoutWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>156</width>
+         <height>31</height>
+        </rect>
        </property>
+       <layout class="QHBoxLayout" name="hl_width_percent">
+        <item>
+         <widget class="QLabel" name="lb_width_percent">
+          <property name="text">
+           <string>Width:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_width_percent"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lb_width_perc">
+          <property name="text">
+           <string>%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
-     </item>
-    </layout>
+      <widget class="QWidget" name="layoutWidget_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>158</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hl_height_percent">
+        <item>
+         <widget class="QLabel" name="lb_height_percent">
+          <property name="text">
+           <string>Height:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_height_percent"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lb_height_perc">
+          <property name="text">
+           <string>%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_10">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>180</y>
+        <width>158</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="hl_perc_resize_buttons">
+       <item>
+        <widget class="QPushButton" name="pb_percent_resize">
+         <property name="text">
+          <string>Resize</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_percent_cancel">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="lb_perc_message">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>531</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Message</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_dimentions">
+     <attribute name="title">
+      <string>Set standard dimentions</string>
+     </attribute>
+     <widget class="QGroupBox" name="gb_standard_dimentions">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>441</width>
+        <height>146</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Set standard dimentions (pixels)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="rb_640">
+         <property name="text">
+          <string>640x480</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="rb_1280">
+         <property name="text">
+          <string>1280x720 (HD)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QRadioButton" name="rb_7680">
+         <property name="text">
+          <string>7680x4320 (8K)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="rb_800">
+         <property name="text">
+          <string>800x600</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" rowspan="2">
+        <widget class="QRadioButton" name="rb_1920">
+         <property name="text">
+          <string>1920x1080 (FHD)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="pb_half">
+         <property name="text">
+          <string>Half</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" rowspan="2">
+        <widget class="QPushButton" name="pb_double">
+         <property name="text">
+          <string>Double</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QRadioButton" name="rb_1024">
+         <property name="text">
+          <string>1024x768</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QRadioButton" name="rb_3840">
+         <property name="text">
+          <string>3840x2160 (4K)</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>180</y>
+        <width>158</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="hl_dims_resize_buttons">
+       <item>
+        <widget class="QPushButton" name="pb_resize">
+         <property name="text">
+          <string>Resize</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_cancel">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="lb_dims_message">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>531</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Message</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="gb_standard_dimentions">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>440</y>
-     <width>311</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Set standard dimentions (pixels)</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
