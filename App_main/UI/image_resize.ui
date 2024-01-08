@@ -23,9 +23,9 @@
    <widget class="QGroupBox" name="gb_size_info">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>170</x>
       <y>210</y>
-      <width>231</width>
+      <width>271</width>
       <height>91</height>
      </rect>
     </property>
@@ -43,7 +43,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>209</width>
+       <width>251</width>
        <height>25</height>
       </rect>
      </property>
@@ -56,23 +56,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="lb_current_width">
+       <widget class="QLabel" name="lb_current_width_height">
         <property name="text">
-         <string>width</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lb_x1">
-        <property name="text">
-         <string>x</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lb_current_height">
-        <property name="text">
-         <string>height</string>
+         <string>width x height</string>
         </property>
        </widget>
       </item>
@@ -83,7 +69,7 @@
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>184</width>
+       <width>251</width>
        <height>25</height>
       </rect>
      </property>
@@ -96,23 +82,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="lb_new_width">
+       <widget class="QLabel" name="lb_new_width_height">
         <property name="text">
-         <string>width</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lb_x3">
-        <property name="text">
-         <string>x</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lb_new_height">
-        <property name="text">
-         <string>height</string>
+         <string>width x height</string>
         </property>
        </widget>
       </item>
@@ -327,7 +299,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="cb_aspect_ratio">
        <property name="geometry">
         <rect>
          <x>10</x>
