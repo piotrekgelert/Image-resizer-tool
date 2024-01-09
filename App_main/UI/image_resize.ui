@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>615</width>
-    <height>620</height>
+    <height>681</height>
    </rect>
   </property>
   <property name="font">
@@ -217,7 +217,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_pixels">
      <attribute name="title">
@@ -313,32 +313,6 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="layoutWidget_11">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>180</y>
-        <width>158</width>
-        <height>33</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="hl_resize_buttons_in_pixels">
-       <item>
-        <widget class="QPushButton" name="pb_resize_pixels">
-         <property name="text">
-          <string>Resize</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pb_cancel_pixels">
-         <property name="text">
-          <string>Cancel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QLabel" name="lb_pixel_message">
       <property name="geometry">
        <rect>
@@ -355,7 +329,7 @@
      <widget class="QPushButton" name="pb_calculate_pixels">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>290</x>
         <y>180</y>
         <width>251</width>
         <height>31</height>
@@ -450,32 +424,6 @@
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="layoutWidget_10">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>180</y>
-        <width>158</width>
-        <height>33</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="hl_perc_resize_buttons">
-       <item>
-        <widget class="QPushButton" name="pb_percent_resize">
-         <property name="text">
-          <string>Resize</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pb_percent_cancel">
-         <property name="text">
-          <string>Cancel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QLabel" name="lb_perc_message">
       <property name="geometry">
        <rect>
@@ -492,7 +440,7 @@
      <widget class="QPushButton" name="pb_calculate_percent">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>290</x>
         <y>180</y>
         <width>251</width>
         <height>31</height>
@@ -649,32 +597,6 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="layoutWidget_5">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>180</y>
-        <width>158</width>
-        <height>33</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="hl_dims_resize_buttons">
-       <item>
-        <widget class="QPushButton" name="pb_resize">
-         <property name="text">
-          <string>Resize</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pb_cancel">
-         <property name="text">
-          <string>Cancel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QLabel" name="lb_dims_message">
       <property name="geometry">
        <rect>
@@ -691,7 +613,7 @@
      <widget class="QPushButton" name="pb_apply_size">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>390</x>
         <y>180</y>
         <width>151</width>
         <height>31</height>
@@ -702,6 +624,32 @@
       </property>
      </widget>
     </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_11">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>620</y>
+      <width>158</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="hl_resize_buttons">
+     <item>
+      <widget class="QPushButton" name="pb_resize">
+       <property name="text">
+        <string>Resize</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_cancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
