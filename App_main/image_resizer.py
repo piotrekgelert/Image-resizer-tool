@@ -14,6 +14,7 @@ from UI.image_resize_ui import Ui_mw_resize_image
 class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
     asp_ratio = bool()
     im_width, im_height = 0, 0
+    new_im_width, new_im_height = 0, 0
 
     def __init__(self):
         super().__init__()
@@ -22,7 +23,9 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
         self.pb_folder_path.clicked.connect(self.path_to_folder)
         self.cb_aspect_ratio.toggled.connect(self.aspect_ratio)
 
-        self.pb_resize_pixels.clicked.connect(self.pixels_setup)
+        self.pb_calculate_pixels.clicked.connect(self.pixels_setup)
+        self.pb_calculate_percent.clicked.connect(self.percent_setup)
+        self.pb_apply_size.clicked.connect(self.standard_dimentions_setup)
     
     def path_to_image(self):
         file_path = qtw.QFileDialog.getOpenFileName()
@@ -50,7 +53,31 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
                 self.le_width_pixels.setText(str(new_width))
                 self.lb_new_width_height.setText(f'{new_width} px x {self.le_height_pixels.text()} px')
         else:
-            print('bebe')
+            if len(self.le_width_pixels.text()) and len(self.le_height_pixels.text()):
+                self.lb_new_width_height.setText(
+                    f'{self.le_width_pixels.text()} px x {self.le_height_pixels.text()} px')
+            else:
+                self.lb_pixel_message.setText('Both dimentions have to be filled in')
+    
+    def percent_setup(self):
+        if len(self.le_width_percent.text()) and len(self.le_height_percent.text()):
+            new_width = int(
+                (float(self.le_width_percent.text()) / 100) * self.im_width)
+            new_height = int(
+                (float(self.le_height_percent.text()) / 100) * self.im_height)
+            self.lb_new_width_height.setText(
+                f'{new_width} px x {new_height} px'
+            )
+        else:
+            self.lb_pixel_message.setText('Both dimentions have to be filled in')
+    
+    def standard_dimentions_setup(self):
+        if self.rb_640_480.isChecked():
+            self.lb_new_width_height.setText(f'640 px x 480 px')
+        else:
+            print('disabled')
+
+
 
 
 

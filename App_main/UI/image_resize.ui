@@ -217,7 +217,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_pixels">
      <attribute name="title">
@@ -352,6 +352,19 @@
        <string>Message</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pb_calculate_pixels">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>180</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate and apply as new size</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_percent">
      <attribute name="title">
@@ -476,6 +489,19 @@
        <string>Message</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pb_calculate_percent">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>180</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate and apply as new size</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_dimentions">
      <attribute name="title">
@@ -487,7 +513,7 @@
         <x>40</x>
         <y>20</y>
         <width>441</width>
-        <height>146</height>
+        <height>151</height>
        </rect>
       </property>
       <property name="title">
@@ -505,71 +531,123 @@
       <property name="checked">
        <bool>false</bool>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QRadioButton" name="rb_640">
-         <property name="text">
-          <string>640x480</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QRadioButton" name="rb_1280">
-         <property name="text">
-          <string>1280x720 (HD)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QRadioButton" name="rb_7680">
-         <property name="text">
-          <string>7680x4320 (8K)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QRadioButton" name="rb_800">
-         <property name="text">
-          <string>800x600</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" rowspan="2">
-        <widget class="QRadioButton" name="rb_1920">
-         <property name="text">
-          <string>1920x1080 (FHD)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="pb_half">
-         <property name="text">
-          <string>Half</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2" rowspan="2">
-        <widget class="QPushButton" name="pb_double">
-         <property name="text">
-          <string>Double</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QRadioButton" name="rb_1024">
-         <property name="text">
-          <string>1024x768</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QRadioButton" name="rb_3840">
-         <property name="text">
-          <string>3840x2160 (4K)</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QRadioButton" name="rb_640_480">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>32</y>
+         <width>92</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>640x480</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_1280_720">
+       <property name="geometry">
+        <rect>
+         <x>114</x>
+         <y>32</y>
+         <width>140</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>1280x720 (HD)</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_7680_4320">
+       <property name="geometry">
+        <rect>
+         <x>277</x>
+         <y>32</y>
+         <width>149</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>7680x4320 (8K)</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_800_600">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>70</y>
+         <width>92</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>800x600</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_1024_768">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>110</y>
+         <width>99</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>1024x768</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_3840_2160">
+       <property name="geometry">
+        <rect>
+         <x>114</x>
+         <y>110</y>
+         <width>146</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>3840x2160 (4K)</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_double">
+       <property name="geometry">
+        <rect>
+         <x>277</x>
+         <y>110</y>
+         <width>155</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Double dimentions</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_1920_1080">
+       <property name="geometry">
+        <rect>
+         <x>114</x>
+         <y>70</y>
+         <width>157</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>1920x1080 (FHD)</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_half">
+       <property name="geometry">
+        <rect>
+         <x>277</x>
+         <y>70</y>
+         <width>137</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Half dimentions</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="layoutWidget_5">
       <property name="geometry">
@@ -608,6 +686,19 @@
       </property>
       <property name="text">
        <string>Message</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_apply_size">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>180</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Apply as new size</string>
       </property>
      </widget>
     </widget>
