@@ -4,9 +4,9 @@ Tool to resize images made with pyqt6 and PIL library in Python 3.87
 
 ## ui examples
 <p align="middle">
-  <img src="" width="250"/>
-  <img src="" width="250"/>
-  <img src="" width="250"/>
+  <img src="https://github.com/piotrekgelert/Image-resizer-tool/blob/main/images/image_resizer_pixels.png" width="30%"/>
+  <img src="https://github.com/piotrekgelert/Image-resizer-tool/blob/main/images/image_resizer_percent.png" width="30%"/>
+  <img src="https://github.com/piotrekgelert/Image-resizer-tool/blob/main/images/image_resizer_standard_dimentions.png" width="30%"/>
 </p>
 
 ### notes

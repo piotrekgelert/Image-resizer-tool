@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>615</width>
-    <height>681</height>
+    <width>594</width>
+    <height>743</height>
    </rect>
   </property>
   <property name="font">
@@ -91,19 +91,6 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QLabel" name="lb_message">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>690</y>
-      <width>621</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Message</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="gb_image_paths">
     <property name="geometry">
      <rect>
@@ -137,9 +124,6 @@
        <height>21</height>
       </rect>
      </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
     </widget>
     <widget class="QLabel" name="lb_folder_path">
      <property name="geometry">
@@ -149,9 +133,6 @@
        <width>621</width>
        <height>21</height>
       </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
      </property>
     </widget>
     <widget class="QWidget" name="layoutWidget_8">
@@ -323,7 +304,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Message</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="pb_calculate_pixels">
@@ -432,9 +413,6 @@
         <width>531</width>
         <height>31</height>
        </rect>
-      </property>
-      <property name="text">
-       <string>Message</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pb_calculate_percent">
@@ -606,9 +584,6 @@
         <height>31</height>
        </rect>
       </property>
-      <property name="text">
-       <string>Message</string>
-      </property>
      </widget>
      <widget class="QPushButton" name="pb_apply_size">
       <property name="geometry">
@@ -628,10 +603,10 @@
    <widget class="QWidget" name="layoutWidget_11">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>320</x>
       <y>620</y>
-      <width>158</width>
-      <height>31</height>
+      <width>251</width>
+      <height>33</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="hl_resize_buttons">
@@ -643,6 +618,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="pb_reset">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="pb_cancel">
        <property name="text">
         <string>Cancel</string>
@@ -650,6 +632,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="lb_main_window">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>670</y>
+      <width>561</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

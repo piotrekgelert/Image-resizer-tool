@@ -1,5 +1,6 @@
 import os
 import sys
+from time import sleep
 
 import PyQt6.QtWidgets as qtw
 from PIL import Image
@@ -24,6 +25,7 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
         self.pb_apply_size.clicked.connect(self.standard_dimentions_setup)
         
         self.pb_resize.clicked.connect(self.resize_image)
+        self.pb_reset.clicked.connect(self.reset)
         self.pb_cancel.clicked.connect(self.close)
     
     def path_to_image(self):
@@ -54,6 +56,9 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
                     f'{self.le_width_pixels.text()} px x {new_height} px')
                 self.new_im_width = int(self.le_height_pixels.text())
                 self.new_im_height = new_height
+                self.lb_pixel_message.setText(
+                    'Set proportional dimentions according to the width'
+                    )
             
             if len(self.le_height_pixels.text()):
                 new_width = int(self.le_height_pixels.text())\
@@ -63,6 +68,9 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
                     f'{new_width} px x {self.le_height_pixels.text()} px')
                 self.new_im_width = new_width
                 self.new_im_height = int(self.le_height_pixels.text())
+                self.lb_pixel_message.setText(
+                    'Set proportional dimentions according to the height'
+                    )
         else:
             if len(self.le_width_pixels.text()) \
                 and len(self.le_height_pixels.text()):
@@ -70,6 +78,9 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
                     f'{self.le_width_pixels.text()} px x {self.le_height_pixels.text()} px')
                 self.new_im_width = int(self.le_width_pixels.text())
                 self.new_im_height = int(self.le_height_pixels.text())
+                self.lb_pixel_message.setText(
+                    'Set dimentions according to the width and the height'
+                    )
             else:
                 self.lb_pixel_message.setText(
                     'Both dimentions have to be filled in')
@@ -86,6 +97,9 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
             )
             self.new_im_width = new_width
             self.new_im_height = new_height
+            self.lb_perc_message.setText(
+                    'Set dimentions according to the percentage of width and height'
+                    )
         else:
             self.lb_perc_message.setText('Both dimentions have to be filled in')
     
@@ -93,30 +107,46 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
         rb = self._dims_set()
         if self.rb_640_480.isChecked():
             rb(640, 480)
+            self.lb_dims_message.setText('Set width: 640 and height: 480')
         
         elif self.rb_800_600.isChecked():
             rb(800, 600)
+            self.lb_dims_message.setText('Set width: 800 and height: 600')
         
         elif self.rb_1024_768.isChecked():
             rb(1024, 768)
+            self.lb_dims_message.setText('Set width: 1024 and height: 768')
 
         elif self.rb_1280_720.isChecked():
             rb(1280, 720)
+            self.lb_dims_message.setText('Set width: 1280 and height: 720')
 
         elif self.rb_1920_1080.isChecked():
             rb(1920, 1080)
+            self.lb_dims_message.setText('Set width: 1920 and height: 1080')
 
         elif self.rb_3840_2160.isChecked():
             rb(3840, 2160)
+            self.lb_dims_message.setText('Set width: 3840 and height: 2160')
         
         elif self.rb_7680_4320.isChecked():
             rb(7680, 4320)
+            self.lb_dims_message.setText('Set width: 7680 and height: 4320')
 
         elif self.rb_half.isChecked():
-            rb(int(self.im_width//2), int(self.im_height//2))
+            width_half = int(self.im_width//2)
+            heigth_half = int(self.im_height//2)
+            rb(width_half, heigth_half)
+            self.lb_dims_message.setText(
+                'Set width: {} and height: {}'.format(width_half, heigth_half))
 
         elif self.rb_double.isChecked():
-            rb(self.im_width*2, self.im_height*2)
+            width_double = self.im_width*2
+            height_double = self.im_height*2
+            rb(width_double, height_double)
+            self.lb_dims_message.setText(
+                'Set width: {} and height: {}'.format(width_double, 
+                                                      height_double))
             
         else:
             self.lb_dims_message.setText('Something went wrong, try again')
@@ -143,6 +173,24 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
             img.save(
                 os.path.join(self.save_path, img_name)
             )
+        
+        self.lb_main_window.setText('Image resized, check folder')
+    
+    def reset(self):
+        self.lb_image_path.clear()
+        self.lb_folder_path.clear()
+        self.lb_main_window.clear()
+        self.lb_current_width_height.setText('width x height')
+        self.lb_new_width_height.setText('width x height')
+        self.le_width_pixels.clear()
+        self.le_height_pixels.clear()
+        self.le_width_percent.clear()
+        self.le_height_percent.clear()
+        self.cb_aspect_ratio.setChecked(False)
+        self.le_width_percent.clear()
+        self.le_height_percent.clear()
+        self.rb_640_480.setChecked(True)
+        self.lb_dims_message.clear()
 
 
 
