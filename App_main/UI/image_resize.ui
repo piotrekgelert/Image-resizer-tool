@@ -293,6 +293,80 @@
         <string>keep aspect ratio (proportional)</string>
        </property>
       </widget>
+      <widget class="QGroupBox" name="gb_sharp_pixels">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>20</y>
+         <width>161</width>
+         <height>80</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Use sharpness</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QRadioButton" name="rb_sharp_pix_04_px">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.4x</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_sharp_pix_06_px">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.6x</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_sharp_pix_08_px">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>30</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.8x</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_sharp_pix_1_px">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>51</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>1.0x</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
      <widget class="QLabel" name="lb_pixel_message">
       <property name="geometry">
@@ -403,6 +477,77 @@
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QGroupBox" name="gb_sharp_percent">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>20</y>
+         <width>161</width>
+         <height>80</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Use sharpness</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QRadioButton" name="rb_sharp_perc_04_px">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.4x</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_sharp_perc_06_px">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.6x</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_sharp_perc_08_px">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>30</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.8x</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_sharp_perc_1_px">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>51</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>1.0x</string>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QLabel" name="lb_perc_message">

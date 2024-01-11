@@ -1,15 +1,17 @@
 import os
 import sys
-from time import sleep
 
 import PyQt6.QtWidgets as qtw
-from PIL import Image
+from PIL import Image, ImageEnhance
 from UI.image_resize_ui import Ui_mw_resize_image
 
 
 class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
     im_path, save_path, im_name, im_extention = '', '', '', ''
-    asp_ratio = bool()
+    asp_ratio: bool = False
+    gb_sharp_px: bool = False
+    gb_sharp_prc: bool = False
+    sharp: float = 0.0
     im_width, im_height = 0, 0
     new_im_width, new_im_height = 0, 0
 
@@ -19,6 +21,8 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
         self.pb_image_path.clicked.connect(self.path_to_image)
         self.pb_folder_path.clicked.connect(self.path_to_folder)
         self.cb_aspect_ratio.toggled.connect(self.aspect_ratio)
+        self.gb_sharp_pixels.toggled.connect(self.gb_sharp_pix)
+        self.gb_sharp_percent.toggled.connect(self.gb_sharp_perc)
 
         self.pb_calculate_pixels.clicked.connect(self.pixels_setup)
         self.pb_calculate_percent.clicked.connect(self.percent_setup)
@@ -45,6 +49,34 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
     def aspect_ratio(self):
         cbutton = self.sender()
         self.asp_ratio = cbutton.isChecked()
+    
+    def gb_sharp_pix(self):
+        self.gb_sharp_px = self.gb_sharp_pixels.isChecked()
+    
+    def gb_sharp_perc(self):
+        self.gb_sharp_prc = self.gb_sharp_percent.isChecked()
+    
+    def sharp_pixels(self):
+        if self.gb_sharp_px:
+            if self.rb_sharp_pix_04_px.isChecked():
+                self.sharp = 0.4
+            elif self.rb_sharp_pix_06_px.isChecked():
+                self.sharp = 0.6
+            elif self.rb_sharp_pix_08_px.isChecked():
+                self.sharp = 0.8
+            elif self.rb_sharp_pix_1_px.isChecked():
+                self.sharp = 1.0
+
+    def sharp_percent(self):
+        if self.gb_sharp_prc:
+            if self.rb_sharp_perc_04_px.isChecked():
+                self.sharp = 0.4
+            elif self.rb_sharp_perc_06_px.isChecked():
+                self.sharp = 0.6
+            elif self.rb_sharp_perc_08_px.isChecked():
+                self.sharp = 0.8
+            elif self.rb_sharp_perc_1_px.isChecked():
+                self.sharp = 1.0
     
     def pixels_setup(self):
         if self.asp_ratio:
@@ -164,6 +196,10 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
                 (self.new_im_width, self.new_im_height),
                 Image.Resampling.LANCZOS
             )
+            if self.sharp != 0:
+                img = ImageEnhance.Sharpness(img)
+                img = img.enhance(1+self.sharp)
+            
             img_name = '{}_{}x{}.{}'.format(
                 self.im_name,
                 self.new_im_width,
@@ -191,6 +227,10 @@ class ImageResizer(qtw.QMainWindow, Ui_mw_resize_image):
         self.le_height_percent.clear()
         self.rb_640_480.setChecked(True)
         self.lb_dims_message.clear()
+        self.rb_sharp_pix_04_px.setChecked(True)
+        self.rb_sharp_perc_04_px.setChecked(True)
+        self.gb_sharp_pixels.setChecked(False)
+        self.gb_sharp_percent.setChecked(False)
 
 
 
